@@ -18,6 +18,8 @@ services:
       - ./frontend:/var/www/frontend
     working_dir: /var/www/frontend
     tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
   api-nginx:
     container_name: api-nginx
     build:
