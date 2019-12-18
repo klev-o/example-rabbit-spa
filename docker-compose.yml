@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frontend-nginx:
+    container_name: front-nginx
+    build:
+      context: ./frontend/docker
+      dockerfile: nginx.docker
+    volumes:
+      - ./frontend:/var/www/frontend
+    ports:
+      - "8080:80"
