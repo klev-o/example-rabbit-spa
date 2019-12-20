@@ -2,9 +2,23 @@
 
 declare(strict_types=1);
 
-header('Content-Type: application/json');
+use Slim\Http\Request;
+use Slim\Http\Response;
 
-echo json_encode([
-    'name' => 'App API',
-    'version' => '1.0',
-]);
+chdir(dirname(__DIR__));
+require 'vendor/autoload.php';
+
+$config = [
+    'settings' => [
+        'addContentLengthHeader' => false,
+    ],
+];
+$app = new \Slim\App($config);
+$app->get('/', function (Request $request, Response $response) {
+    return $response->withJson([
+        'name' => 'App API',
+        'version' => '1.0',
+    ]);
+});
+
+$app->run();
