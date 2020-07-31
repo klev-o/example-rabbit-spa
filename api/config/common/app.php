@@ -26,6 +26,10 @@ return [
         );
     },
 
+    Middleware\ValidationExceptionMiddleware::class => function () { //todo
+        return new Middleware\ValidationExceptionMiddleware();
+    },
+
     Middleware\DomainExceptionMiddleware::class => function () {
         return new Middleware\DomainExceptionMiddleware();
     },
