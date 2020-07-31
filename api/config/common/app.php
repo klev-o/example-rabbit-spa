@@ -26,12 +26,16 @@ return [
         );
     },
 
-    Middleware\ValidationExceptionMiddleware::class => function () { //todo
+    Middleware\ValidationExceptionMiddleware::class => function () {
         return new Middleware\ValidationExceptionMiddleware();
     },
 
     Middleware\DomainExceptionMiddleware::class => function () {
         return new Middleware\DomainExceptionMiddleware();
+    },
+
+    Middleware\BodyParamsMiddleware::class => function () {
+        return new Middleware\BodyParamsMiddleware();
     },
 
     Action\HomeAction::class => function () {
