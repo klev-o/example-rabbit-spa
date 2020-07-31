@@ -3,8 +3,8 @@
 namespace Api\Test\Unit\Http\Action;
 
 use Api\Http\Action\HomeAction;
+use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
-use Zend\Diactoros\ServerRequest;
 
 class HomeActionTest extends TestCase
 {
