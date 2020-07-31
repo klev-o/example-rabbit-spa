@@ -3,10 +3,16 @@
 declare(strict_types=1);
 
 use Api\Http\Action\HomeAction;
+use Api\Http\Middleware;
 use Api\Model;
 use Psr\Container\ContainerInterface;
 
 return [
+
+    Middleware\DomainExceptionMiddleware::class => function () {
+        return new Middleware\DomainExceptionMiddleware();
+    },
+
     HomeAction::class => function () {
         return new HomeAction();
     },

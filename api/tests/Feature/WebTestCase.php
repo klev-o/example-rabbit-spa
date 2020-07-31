@@ -79,7 +79,7 @@ class WebTestCase extends TestCase
     {
         $container = $this->container();
         $app = new App($container);
-        (require 'config/routes.php')($app);
+        (require 'config/routes.php')($app, $container);
         return $app;
     }
 
