@@ -27,4 +27,9 @@ class ConfirmToken
     {
         return $this->token === $token;
     }
+
+    public function getToken(): string
+    {
+        return $this->token;
+    }
 }
