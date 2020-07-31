@@ -30,8 +30,8 @@ $entityManager = $container->get(EntityManagerInterface::class);
 $connection = $entityManager->getConnection();
 
 $configuration = new Configuration($connection);
-$configuration->setMigrationsDirectory('src/Data/Migration');
-$configuration->setMigrationsNamespace('Api\Data\Migration');
+$configuration->setMigrationsDirectory('src/Data/Migrations');
+$configuration->setMigrationsNamespace('Api\Data\Migrations');
 
 
 $cli->getHelperSet()->set(new EntityManagerHelper($entityManager), 'em');
