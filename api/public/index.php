@@ -13,11 +13,13 @@ if (file_exists('.env')) {
     (new Dotenv())->load('.env');
 }
 
-$config = require 'config/config.php';
-$container = new Container($config);
-$app = new App($container);
+(function () {
+    $config = require 'config/config.php';
+    $container = new Container($config);
+    $app = new App($container);
 
-(require 'config/routes.php')($app);
 
+    (require 'config/routes.php')($app);
 
-$app->run();
+    $app->run();
+})();
