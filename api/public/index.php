@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Api\Http\Action\HomeAction;
 use Slim\App;
 use Slim\Container;
 use Symfony\Component\Dotenv\Dotenv;
@@ -18,7 +17,7 @@ $config = require 'config/config.php';
 $container = new Container($config);
 $app = new App($container);
 
-$app->get('/', HomeAction::class . ':handle');
+(require 'config/routes.php')($app);
 
 
 $app->run();
