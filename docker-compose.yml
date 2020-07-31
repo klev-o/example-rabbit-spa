@@ -37,6 +37,7 @@ services:
     volumes:
       - ./api:/var/www/api
   api-php-cli:
+    container_name: api-php-cli
     build:
       context: ./api/docker
       dockerfile: php-cli.docker
