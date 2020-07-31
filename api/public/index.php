@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Slim\App;
-use Slim\Container;
 use Symfony\Component\Dotenv\Dotenv;
 
 chdir(dirname(__DIR__));
@@ -14,10 +13,8 @@ if (file_exists('.env')) {
 }
 
 (function () {
-    $config = require 'config/config.php';
-    $container = new Container($config);
+    $container = require 'config/container.php';
     $app = new App($container);
-
 
     (require 'config/routes.php')($app);
 
