@@ -13,7 +13,7 @@ $config = require 'config/config.php';
 $container = new Container($config);
 $app = new App($container);
 
-$app->get('/', HomeAction::class);
+$app->get('/', HomeAction::class . ':handle');
 
 
 $app->run();
