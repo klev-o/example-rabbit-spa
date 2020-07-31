@@ -12,6 +12,7 @@
     "psr/http-server-middleware": "^1.0",
     "ramsey/uuid": "^3.9",
     "slim/slim": "^3.11",
+    "symfony/console": "^4.4",
     "symfony/dotenv": "^4.4"
   },
   "require-dev": {
@@ -29,6 +30,7 @@
     }
   },
   "scripts": {
+    "app": "php bin/app.php --ansi",
     "test": "phpunit --colors=always",
     "test:feature": "phpunit --colors=always --testsuite feature",
     "test:unit": "phpunit --colors=always --testsuite unit"
