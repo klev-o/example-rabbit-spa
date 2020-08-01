@@ -40,6 +40,7 @@ services:
       - ./api:/var/www/api
     depends_on:
       - api-postgres
+      - mailer
   api-php-cli:
     container_name: api-php-cli
     build:
@@ -49,6 +50,7 @@ services:
       - ./api:/var/www/api
     depends_on:
       - api-postgres
+      - mailer
     working_dir: /var/www/api
     tty: true
   api-postgres:
@@ -61,6 +63,12 @@ services:
       - "POSTGRES_DB=api"
     ports:
       - "54321:5432"
+  mailer:
+    image: mailhog/mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025"
+      - "8082:8025"
 
 volumes:
   api-postgres:
