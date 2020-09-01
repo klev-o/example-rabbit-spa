@@ -45,7 +45,10 @@ class AuthFixture extends AbstractFixture
 
         $manager->flush();
 
+        $this->addReference('user', $user);
+
         $this->token = (string)$token;
+        //$this->token = (string)$token->convertToJWT(CryptKeyHelper::get());
     }
 
     public function getUser(): User
