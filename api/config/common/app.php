@@ -83,4 +83,11 @@ return [
             $container->get(Validator::class)
         );
     },
+
+    Action\Author\CreateAction::class => function (ContainerInterface $container) {
+        return new Action\Author\CreateAction(
+            $container->get(Model\Video\UseCase\Author\Create\Handler::class),
+            $container->get(Validator::class)
+        );
+    },
 ];
